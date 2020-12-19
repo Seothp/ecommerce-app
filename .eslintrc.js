@@ -24,5 +24,6 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'linebreak-style': 'off',
     'no-use-before-define': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
