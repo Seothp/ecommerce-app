@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 import IconPencil from '../Icons/IconPencil';
@@ -19,13 +20,17 @@ const ReviewText = styled.span`
   font-size: 11px;
   line-height: 8px;
 `;
-function ButtonReview() {
+function ButtonReview({ handleClick }) {
   return (
-    <StyledButton size="small">
+    <StyledButton size="small" handleClick={handleClick}>
       <IconPencil />
       <ReviewText>Write a review</ReviewText>
     </StyledButton>
   );
 }
+
+ButtonReview.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default ButtonReview;
