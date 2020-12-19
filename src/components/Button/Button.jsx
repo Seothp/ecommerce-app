@@ -20,7 +20,6 @@ function Button({ size, variant, children }) {
   const theme = useContext(ThemeContext);
   const { primary } = theme;
   let additionalStyles = '';
-  console.log(primary);
   if (variant === 'outline') {
     additionalStyles += `
         box-sizing: border-box;
