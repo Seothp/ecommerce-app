@@ -1,4 +1,3 @@
-// /* eslint-disable */
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -39,6 +38,7 @@ function Button({
         color: #FFFFFF;
         :active {
           opacity: 0.9;
+          box-shadow: none;
         }
       `;
   }
