@@ -10,6 +10,7 @@ export const themes = {
     gray: '#9B9B9B',
     main: '#FFFFFF',
     invert: '#222222',
+    light: '#F9F9F9',
   },
   dark: {
     primary: '#EF3651',
@@ -20,6 +21,7 @@ export const themes = {
     gray: '#ABB4BD',
     main: '#2A2C36',
     invert: '#F7F7F7',
+    light: '#F7F7F7',
   },
 };
 export const ThemeContext = createContext(themes.light);
