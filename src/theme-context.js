@@ -2,6 +2,7 @@ import { createContext } from 'react';
 
 export const themes = {
   light: {
+    name: 'light',
     primary: '#DB3022',
     error: '#F01F0E',
     success: '#2AA952',
@@ -13,6 +14,7 @@ export const themes = {
     light: '#F9F9F9',
   },
   dark: {
+    name: 'dark',
     primary: '#EF3651',
     error: '#FF2424',
     success: '#55D85A',
