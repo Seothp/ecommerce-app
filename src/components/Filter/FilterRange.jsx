@@ -39,7 +39,7 @@ function FilterRange({ start, end, onUpdate }) {
   const theme = useContext(ThemeContext);
   const [values, setValues] = useState({ start, end });
   const handleUpdate = (values) => {
-    onUpdate();
+    onUpdate(values);
     setValues({
       start: values[0],
       end: values[1],
