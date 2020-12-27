@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -14,16 +13,25 @@ const LinkText = styled.span`
 function TabBarLink({ Icon, text, iconProps }) {
   return (
     <div className="tab-bar-link">
-      <Icon {...iconProps}/>
+      <Icon {...iconProps} />
       <LinkText>
         {text}
       </LinkText>
     </div>
-  )
+  );
 }
 
-// TabBarLink.propTypes = {
-//   Component: PropTypes.
-// };
+TabBarLink.propTypes = {
+  Icon: PropTypes.element.isRequired,
+  text: PropTypes.string.isRequired,
+  iconProps: PropTypes.objectOf([
+    PropTypes.any,
+  ]),
+
+};
+
+TabBarLink.defaultProps = {
+  iconProps: {},
+};
 
 export default TabBarLink;
