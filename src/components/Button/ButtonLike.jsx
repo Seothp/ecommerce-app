@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { ThemeContext } from '../../theme-context';
 import Button from './Button';
-import IconHeart from '../Icons/IconHeart';
+import IconHeart from '../Icons/IconHeart/IconHeart';
 
 const StyledButton = styled(Button)`
   width: 36px;
@@ -43,7 +43,7 @@ function ButtonLike({ handleClick, active }) {
       pressed={pressed}
     >
       like
-      <IconHeart outline={!pressed && !active} fill={fill} />
+      <IconHeart outline={!pressed && !active} fill={fill} width={13} height={12} />
     </StyledButton>
   );
 }
