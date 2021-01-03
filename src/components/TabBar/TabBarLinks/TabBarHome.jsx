@@ -6,7 +6,12 @@ import IconHome from '../../Icons/IconHome/IconHome';
 
 function TabBarHome({ isActive, fill }) {
   return (
-    <TabBarLink Icon={IconHome} text="Home" iconProps={{ outline: !isActive, fill }} />
+    <TabBarLink
+      Icon={IconHome}
+      text="Home"
+      iconProps={{ outline: !isActive, fill }}
+      color={fill}
+    />
   );
 }
 

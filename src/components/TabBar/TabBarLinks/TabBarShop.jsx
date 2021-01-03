@@ -13,6 +13,7 @@ function TabBarShop({ isActive, fill }) {
       iconProps={{
         outline: !isActive, fill, width: size, height: size,
       }}
+      color={fill}
     />
   );
 }

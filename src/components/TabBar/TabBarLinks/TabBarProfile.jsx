@@ -10,8 +10,9 @@ function TabBarProfile({ isActive, fill }) {
       Icon={IconProfile}
       text="Profile"
       iconProps={{
-        width: 26, height: 30, outline: !isActive, fill,
+        width: 26, height: 26, outline: !isActive, fill,
       }}
+      color={fill}
     />
   );
 }

@@ -12,6 +12,7 @@ function TabBarBag({ isActive, fill }) {
       iconProps={{
         width: 26, height: 26, outline: !isActive, fill,
       }}
+      color={fill}
     />
   );
 }

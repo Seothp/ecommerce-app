@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import { ThemeContext } from '../../theme-context';
 
 const StyledIndicator = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 375px;
-  height: 34px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -18,6 +21,7 @@ const Line = styled.div`
   border-radius: 100px;
   background: ${(props) => props.bgColor};
 `;
+
 function HomeIndicator({ type, ...attrs }) {
   const theme = useContext(ThemeContext);
   const isLight = type === 'light';

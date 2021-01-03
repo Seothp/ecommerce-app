@@ -2,31 +2,44 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const TabBarLinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+`;
+
 const LinkText = styled.span`
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
+  text-decoration: none;
+  color: ${(props) => props.color};
 `;
 
-function TabBarLink({ Icon, text, iconProps }) {
+function TabBarLink({
+  Icon, text, iconProps, color,
+}) {
   return (
-    <div className="tab-bar-link">
+    <TabBarLinkWrapper className="tab-bar-link">
       <Icon {...iconProps} />
-      <LinkText>
+      <LinkText color={color}>
         {text}
       </LinkText>
-    </div>
+    </TabBarLinkWrapper>
   );
 }
 
 TabBarLink.propTypes = {
-  Icon: PropTypes.element.isRequired,
+  Icon: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  iconProps: PropTypes.objectOf([
+  color: PropTypes.string.isRequired,
+  iconProps: PropTypes.objectOf(PropTypes.oneOfType([
     PropTypes.any,
-  ]),
+  ])),
 
 };
 
