@@ -12,11 +12,11 @@ const StyledButton = styled(Button)`
   border-radius: 50%;
   font-size: 0;
   line-height: 0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: ${(props) => (props.theme.name === 'light' ? '0px 4px 4px rgba(0, 0, 0, 0.08)' : '0px 1px 8px rgba(11, 11, 11, 0.26)')};
   background-color: ${(props) => (props.pressed ? props.theme.primary : props.theme.main)};
 `;
 
-function ButtonLike({ handleClick, active }) {
+function ButtonLike({ handleClick, active, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -41,6 +41,7 @@ function ButtonLike({ handleClick, active }) {
       onMouseDown={handlePress}
       theme={theme}
       pressed={pressed}
+      {...attrs}
     >
       like
       <IconHeart outline={!pressed && !active} fill={fill} width={13} height={12} />
