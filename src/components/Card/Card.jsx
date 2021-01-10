@@ -5,21 +5,24 @@ import { ThemeContext } from '../../theme-context';
 
 const StyledCard = styled.div`
   position: relative;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
   background: ${(props) => props.theme.main};
+  border-radius: ${(props) => props.borderRadius};
 `;
 
 function Card({
   type, width, height, children, ...attrs
 }) {
   const theme = useContext(ThemeContext);
+  const borderRadius = type === 'line' ? '8px' : 'none';
   return (
     <StyledCard
       className="product-card"
       theme={theme}
       width={width}
       height={height}
+      borderRadius={borderRadius}
       {...attrs}
     >
       {children}
