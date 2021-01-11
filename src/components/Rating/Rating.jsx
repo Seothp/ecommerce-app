@@ -27,7 +27,7 @@ const StarsWrapper = styled.div`
   align-items: center;
 `;
 function Rating({
-  rating, starWidth, starHeight, countOfVotes,
+  rating, starWidth, starHeight, countOfVotes, ...attrs
 }) {
   const theme = useContext(ThemeContext);
   const stars = Array.from(
@@ -35,7 +35,7 @@ function Rating({
     (_, i) => ((i + 1) * 2 < rating ? { isActive: true, id: i } : { isActive: false, id: i }),
   );
   return (
-    <RatingWrapper className="rating">
+    <RatingWrapper className="rating" {...attrs}>
       <StarsWrapper className="stars">
         {
           stars.map((star) => (
