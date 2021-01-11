@@ -7,7 +7,7 @@ const StyledCard = styled.div`
   position: relative;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
-  background: ${(props) => props.theme.main};
+  background: ${(props) => props.background};
   border-radius: ${(props) => props.borderRadius};
 `;
 
@@ -16,10 +16,11 @@ function Card({
 }) {
   const theme = useContext(ThemeContext);
   const borderRadius = type === 'line' ? '8px' : 'none';
+  const background = type === 'line' ? theme.main : 'none';
   return (
     <StyledCard
       className="product-card"
-      theme={theme}
+      background={background}
       width={width}
       height={height}
       borderRadius={borderRadius}
