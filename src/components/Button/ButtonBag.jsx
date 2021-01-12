@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes, { bool } from 'prop-types';
 
 import Button from './Button';
-import IconBag from '../Icons/IconBag';
+import IconBag from '../Icons/IconBag/IconBag';
 import { ThemeContext } from '../../theme-context';
 
 const StyledButton = styled(Button)`
@@ -48,7 +48,12 @@ function ButtonBag({ handleClick, isActive }) {
       onMouseDown={handlePress}
     >
       add to bag
-      <IconBag fill={fill} />
+      <IconBag
+        fill={fill}
+        outline={false}
+        width={13}
+        height={12}
+      />
     </StyledButton>
   );
 }
