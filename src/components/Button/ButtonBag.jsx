@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
   background-color: ${(props) => props.bgColor};
   ${({ isActive }) => (isActive ? 'box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)' : '')};
 `;
-function ButtonBag({ handleClick, isActive }) {
+function ButtonBag({ handleClick, isActive, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -46,6 +46,7 @@ function ButtonBag({ handleClick, isActive }) {
       bgColor={bgColor}
       isActive={isActive}
       onMouseDown={handlePress}
+      {...attrs}
     >
       add to bag
       <IconBag
