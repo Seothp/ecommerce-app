@@ -29,6 +29,7 @@ const Feature = styled.div`
   font-weight: 900;
   font-size: 16px;
   line-height: 19px;
+  color: ${(props) => props.color};
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -71,6 +72,7 @@ function OrderCard({
         <Feature
           className="track-id"
           style={{ marginTop: 12, marginBottom: 4 }}
+          color={textColor}
         >
           <HelperText
             style={{ marginRight: 8 }}
@@ -83,7 +85,10 @@ function OrderCard({
           </TrackId>
         </Feature>
         <Wrapper>
-          <Feature className="quantity">
+          <Feature
+            className="quantity"
+            color={textColor}
+          >
             <HelperText
               style={{ marginRight: 8 }}
               color={helperColor}
@@ -94,7 +99,10 @@ function OrderCard({
               {quantity}
             </div>
           </Feature>
-          <Feature className="amount">
+          <Feature
+            className="amount"
+            color={textColor}
+          >
             <HelperText
               style={{ marginRight: 8 }}
               color={helperColor}
