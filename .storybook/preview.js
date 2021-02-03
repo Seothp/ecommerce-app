@@ -5,7 +5,9 @@ const withThemeProvider = (Story, context) => {
   const theme = themes[context.globals.theme];
   return (
     <ThemeContext.Provider value={theme}>
-      <Story {...context} />
+      <div style={{ background: theme.background, height: '100vh', padding: 16 }}>
+        <Story {...context} />
+      </div>
     </ThemeContext.Provider>
   )
 }
