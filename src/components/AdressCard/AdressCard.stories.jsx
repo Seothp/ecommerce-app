@@ -7,7 +7,7 @@ export default {
   component: AdressCard,
 };
 
-const Template = (args) => <AdressCard {...args} style={{ fontFamily: 'Roboto' }} />;
+const Template = (args) => <AdressCard {...args} />;
 
 export const DefaultCard = Template.bind({});
 DefaultCard.args = {
