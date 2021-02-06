@@ -9,7 +9,9 @@ import Price from '../Price/Price';
 import Rating from '../Rating/Rating';
 import ButtonBag from '../Button/ButtonBag';
 import ButtonClose from '../Button/ButtonClose';
+import Disabled from '../Disabled/Disabled';
 
+import { hexToRgb } from '../../utilities';
 import { ThemeContext } from '../../theme-context';
 
 const StyledProductCardFavorites = styled.div`
@@ -22,6 +24,7 @@ const StyledProductCardFavorites = styled.div`
 `;
 const StyledImageWrapper = styled.div`
   position: absolute;
+  height: 184px;
   left: 1px;
   top: 0;
 `;
@@ -49,6 +52,21 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
+const SoldoutMsg = styled(HelperText)`
+  display: block;
+  box-sizing: border-box;
+  padding: 5px 20px 5px 11px;
+  height: 36px;
+  width: 163px;
+  background: ${(props) => `rgba(${hexToRgb(props.disabledBgColor)}, 0.7)`};
+  position: absolute;
+  z-index: 3;
+  bottom: 0px;
+  left: 0px;
+  color: ${(props) => props.color};
+  border-radius: 0px 0px 8px 8px;
+`;
+
 function ProductCardFavorites({
   soldout, brandName, itemName, color, size, price, newPrice, rating, countOfVotes, imgSrc,
   onAddToBag, onRemoveFromFavorites,
@@ -56,15 +74,28 @@ function ProductCardFavorites({
   const theme = useContext(ThemeContext);
   const helperColor = theme.gray;
   const textColor = theme.invert;
+  const disabledBgColor = theme.main;
   return (
     <Card
       type="module"
       width={164}
       height={281}
     >
+      {soldout
+          && <Disabled disabledBgColor={disabledBgColor} />}
       <StyledProductCardFavorites>
         <StyledImageWrapper className="img-wrapper">
           <StyledImage src={imgSrc} alt="favorites card" width={131} height={175} />
+          {soldout
+          && (
+          <SoldoutMsg
+            color={textColor}
+            disabledBgColor={disabledBgColor}
+          >
+            Sorry, this item is currently
+            sold out
+          </SoldoutMsg>
+          )}
         </StyledImageWrapper>
         <Rating
           rating={rating}

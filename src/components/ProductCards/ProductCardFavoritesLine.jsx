@@ -9,6 +9,7 @@ import Price from '../Price/Price';
 import Rating from '../Rating/Rating';
 import ButtonBag from '../Button/ButtonBag';
 import ButtonClose from '../Button/ButtonClose';
+import Disabled from '../Disabled/Disabled';
 
 import { ThemeContext } from '../../theme-context';
 
@@ -46,6 +47,12 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100%;
 `;
+const SoldoutMsg = styled(HelperText)`
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  color: ${(props) => props.color};
+`;
 function ProductCardFavoritesLine({
   soldout, brandName, itemName, color, size, price, newPrice, rating, countOfVotes, imgSrc,
   onAddToBag, onRemoveFromFavorites,
@@ -53,8 +60,18 @@ function ProductCardFavoritesLine({
   const theme = useContext(ThemeContext);
   const helperColor = theme.gray;
   const textColor = theme.invert;
+  const disabledBgColor = theme;
   return (
     <Card>
+      { soldout
+        && (
+        <>
+          <Disabled disabledBgColor={disabledBgColor} />
+          <SoldoutMsg color={helperColor}>
+            Sorry, this item is currently sold out
+          </SoldoutMsg>
+        </>
+        )}
       <StyledProductCardFavorites>
         <StyledImageWrapper className="img-wrapper">
           <StyledImage src={imgSrc} alt="favorites card" width={104} height={104} />
