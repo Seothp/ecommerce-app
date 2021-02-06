@@ -129,7 +129,7 @@ function OrderCard({
             className="deliver-status"
             color={statusColor}
           >
-            delivered
+            {deliverStatus}
           </Status>
         </Wrapper>
       </StyledOrderCard>
