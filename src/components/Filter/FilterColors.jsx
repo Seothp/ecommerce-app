@@ -6,7 +6,7 @@ import FilterColor from './FilterColor';
 /**
  *
  * @param {object} props - props of component
- * @param {Array.<{colorValue: String, isActive: boolean}>} props.color
+ * @param {Array.<{colorValue: String, isActive: boolean}>} props.colors
  */
 
 function FilterColors({ colors, onChange }) {
