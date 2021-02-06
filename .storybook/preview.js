@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeContext, themes } from '../src/theme-context';
+import { MemoryDecorator, MemoryRouter } from 'react-router-dom';
 
 const withThemeProvider = (Story, context) => {
   const theme = themes[context.globals.theme];
@@ -11,7 +12,11 @@ const withThemeProvider = (Story, context) => {
     </ThemeContext.Provider>
   )
 }
-
+const withRouter = (Story) => (
+  <MemoryRouter initialEntries={['/']}>
+    <Story />
+  </MemoryRouter>
+)
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 }
@@ -29,4 +34,4 @@ export const globalTypes = {
   },
 };
 
-export const decorators = [withThemeProvider];
+export const decorators = [withThemeProvider, withRouter];
