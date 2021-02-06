@@ -44,7 +44,7 @@ const Feature = styled.div`
 `;
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   height: 100%;
 `;
 const SoldoutMsg = styled(HelperText)`
@@ -52,6 +52,9 @@ const SoldoutMsg = styled(HelperText)`
   bottom: -18px;
   left: 0;
   color: ${(props) => props.color};
+`;
+const Bottom = styled.div`
+  display: flex;
 `;
 function ProductCardFavoritesLine({
   soldout, brandName, itemName, color, size, price, newPrice, rating, countOfVotes, imgSrc,
@@ -88,44 +91,51 @@ function ProductCardFavoritesLine({
         >
           {itemName}
         </Subheader>
-        <Wrapper className="wrapper">
-          <Feature
+        <Bottom>
+          <Wrapper
+            className="wrapper"
             style={{ marginRight: 29 }}
           >
-            <HelperText
-              color={helperColor}
-              style={{ marginRight: 4 }}
-            >
-              Color:
-            </HelperText>
-            <HelperText
-              color={textColor}
-            >
-              {color}
-            </HelperText>
-          </Feature>
-          <Feature>
-            <HelperText
-              color={helperColor}
-              style={{ marginRight: 4 }}
-            >
-              Size:
-            </HelperText>
-            <HelperText
-              color={textColor}
-            >
-              {size}
-            </HelperText>
-          </Feature>
-        </Wrapper>
-        <Wrapper className="wrapper">
-          <Price
-            price={price}
-            newPrice={newPrice}
-            style={{ marginTop: 'auto', marginRight: 56 }}
-          />
-          <Rating rating={rating} countOfVotes={countOfVotes} />
-        </Wrapper>
+            <Feature>
+              <HelperText
+                color={helperColor}
+                style={{ marginRight: 4 }}
+              >
+                Color:
+              </HelperText>
+              <HelperText
+                color={textColor}
+              >
+                {color}
+              </HelperText>
+            </Feature>
+            <Price
+              price={price}
+              newPrice={newPrice}
+              style={{ marginTop: 10 }}
+            />
+          </Wrapper>
+          <Wrapper className="wrapper">
+            <Feature>
+              <HelperText
+                color={helperColor}
+                style={{ marginRight: 4 }}
+              >
+                Size:
+              </HelperText>
+              <HelperText
+                color={textColor}
+              >
+                {size}
+              </HelperText>
+            </Feature>
+            <Rating
+              rating={rating}
+              countOfVotes={countOfVotes}
+              style={{ marginTop: 12 }}
+            />
+          </Wrapper>
+        </Bottom>
         <StyledCloseButton onClick={onRemoveFromFavorites} />
         {!soldout
           && <StyledBagButton handleClick={onAddToBag} />}
