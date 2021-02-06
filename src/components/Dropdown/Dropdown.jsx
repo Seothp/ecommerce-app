@@ -8,13 +8,17 @@ import Descriptive from '../Typography/Descriptive';
 import IconDirectionArrow from '../Icons/IconDirectionArrow';
 import { ThemeContext } from '../../theme-context';
 
+const StyledDropDown = styled.div`
+  position: relative;
+`;
+
 const DropdownTitle = styled.div`
   background: ${(props) => props.theme.main};
   display: inline-block;
   box-sizing: border-box;
   border: 1px solid ${(props) => props.borderColor};
   border-radius: 8px;
-  height: 40px;
+  height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
   display: flex;
   justify-content: space-between;
@@ -24,6 +28,9 @@ const DropdownTitle = styled.div`
 `;
 
 const DropdownList = styled.div`
+  position: absolute;
+  top: ${(props) => props.top}px;
+  left: 0;
   width: ${(props) => props.width}px;
   border-bottom: 1px solid ${(props) => props.borderColor};
 `;
@@ -31,7 +38,7 @@ const DropdownList = styled.div`
 const DropdownItem = styled.div`
   border: 1px solid ${(props) => props.borderColor};
   border-bottom: none;
-  height: 40px;
+  height: ${(props) => props.height}px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,14 +79,16 @@ function Dropdown({
     }
   };
   const borderColor = (required && value === initialValue) ? theme.error : theme.gray;
+  const itemHeight = 40;
   return (
-    <div className="dropdown">
+    <StyledDropDown className="dropdown">
       <DropdownTitle
         onClick={toggleIsOpened}
         width={width}
         className="dropdown-title"
         theme={theme}
         borderColor={borderColor}
+        height={itemHeight}
       >
         <Descriptive color={theme.invert}>{value}</Descriptive>
         <IconDirectionArrow fill={theme.invert} />
@@ -91,6 +100,7 @@ function Dropdown({
           width={width}
           borderColor={borderColor}
           ref={listRef}
+          top={itemHeight}
         >
           {list.map((item) => (
             <DropdownItem
@@ -98,13 +108,14 @@ function Dropdown({
               borderColor={borderColor}
               onClick={() => handleClick(item)}
               key={item}
+              height={itemHeight}
             >
               <Descriptive color={theme.invert}>{item}</Descriptive>
             </DropdownItem>
           ))}
         </DropdownList>
         )}
-    </div>
+    </StyledDropDown>
   );
 }
 
