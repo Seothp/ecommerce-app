@@ -56,6 +56,7 @@ const Tabs = styled.div`
 function TabBar({ ...attrs }) {
   const theme = useContext(ThemeContext);
   const location = useLocation();
+  console.log(location);
   const currentPath = location.pathname;
   const isActive = (path) => path === currentPath;
   const indicatorType = (theme.name === 'light' ? 'light' : 'dark');
