@@ -69,7 +69,10 @@ function NavigationBar({
 NavigationBar.propTypes = {
   isHeadline: PropTypes.bool,
   title: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.oneOf([
+    'small',
+    'big',
+  ]),
   onClick: PropTypes.func.isRequired,
 };
 
