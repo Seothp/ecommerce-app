@@ -18,6 +18,7 @@ const HiddenCheckbox = styled.input`
   width: 1px;
 `;
 const StyledLabel = styled.label`
+  position: relative;
   display: flex;
   width: 33px;
   height: 20px;
