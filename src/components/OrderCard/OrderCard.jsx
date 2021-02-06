@@ -144,7 +144,10 @@ OrderCard.propTypes = {
   quantity: PropTypes.number.isRequired,
   amount: PropTypes.number.isRequired,
   onOpenDetails: PropTypes.func.isRequired,
-  deliverStatus: PropTypes.string.isRequired,
+  deliverStatus: PropTypes.oneOf([
+    'delivered',
+    'cancelled',
+  ]).isRequired,
 };
 
 export default OrderCard;
