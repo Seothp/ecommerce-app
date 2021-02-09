@@ -30,7 +30,7 @@ function ButtonAdd({ handleClick }) {
   const fill = pressed ? theme.invert : theme.main;
   return (
     <StyledButton
-      handleClick={handleClick}
+      onClick={handleClick}
       onMouseDown={handlePress}
       theme={theme}
       pressed={pressed}
