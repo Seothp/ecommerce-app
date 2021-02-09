@@ -16,7 +16,7 @@ const StyledButton = styled(Button)`
   background-color: ${(props) => (props.pressed ? props.theme.primary : props.theme.main)};
 `;
 
-function ButtonLike({ handleClick, active, ...attrs }) {
+function ButtonLike({ onClick, active, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -37,7 +37,7 @@ function ButtonLike({ handleClick, active, ...attrs }) {
   }
   return (
     <StyledButton
-      handleClick={handleClick}
+      onClick={onClick}
       onMouseDown={handlePress}
       theme={theme}
       pressed={pressed}
@@ -50,7 +50,7 @@ function ButtonLike({ handleClick, active, ...attrs }) {
 }
 
 ButtonLike.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   active: PropTypes.bool,
 };
 

@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonLike',
   component: ButtonLike,
   argTypes: {
-    handleClick: { action: 'click' },
+    onClick: { action: 'click' },
   },
 };
 
