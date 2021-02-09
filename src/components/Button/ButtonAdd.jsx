@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   background-color: ${(props) => (props.pressed ? props.theme.main : props.theme.invert)};
 `;
 
-function ButtonAdd({ handleClick }) {
+function ButtonAdd({ onClick }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -30,7 +30,7 @@ function ButtonAdd({ handleClick }) {
   const fill = pressed ? theme.invert : theme.main;
   return (
     <StyledButton
-      onClick={handleClick}
+      onClick={onClick}
       onMouseDown={handlePress}
       theme={theme}
       pressed={pressed}
@@ -42,7 +42,7 @@ function ButtonAdd({ handleClick }) {
 }
 
 ButtonAdd.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonAdd;
