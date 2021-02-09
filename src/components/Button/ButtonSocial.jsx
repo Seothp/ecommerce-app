@@ -16,9 +16,9 @@ const StyledButton = styled.button`
   }
 `;
 
-function ButtonSocial({ handleClick, type, ...attrs }) {
+function ButtonSocial({ onClick, type, ...attrs }) {
   return (
-    <StyledButton onClick={handleClick} {...attrs}>
+    <StyledButton onClick={onClick} {...attrs}>
       <IconSocial type={type} />
     </StyledButton>
   );
@@ -26,7 +26,7 @@ function ButtonSocial({ handleClick, type, ...attrs }) {
 
 ButtonSocial.propTypes = {
   type: PropTypes.oneOf(['fb', 'google']).isRequired,
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonSocial;
