@@ -119,7 +119,7 @@ function PromocodeCard({
           </HelperText>
           <StyledButton
             size="small"
-            handleClick={onApply}
+            onClick={onApply}
           >
             Apply
           </StyledButton>

@@ -121,7 +121,7 @@ function OrderCard({
           <StyledButton
             variant="outline"
             size="small"
-            handleClick={onOpenDetails}
+            onClick={onOpenDetails}
           >
             Details
           </StyledButton>

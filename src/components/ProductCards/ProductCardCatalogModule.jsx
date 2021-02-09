@@ -75,7 +75,7 @@ function ProductCardCatalogModule({
           newPrice={newPrice}
           style={{ marginTop: 'auto' }}
         />
-        <StyledButton handleClick={onAddToFavorites}>
+        <StyledButton onClick={onAddToFavorites}>
           like
         </StyledButton>
       </StyledProductCardCatalog>

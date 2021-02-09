@@ -138,7 +138,7 @@ function ProductCardFavoritesLine({
         </Bottom>
         <StyledCloseButton onClick={onRemoveFromFavorites} />
         {!soldout
-          && <StyledBagButton handleClick={onAddToBag} />}
+          && <StyledBagButton onClick={onAddToBag} />}
       </StyledProductCardFavorites>
     </Card>
   );
