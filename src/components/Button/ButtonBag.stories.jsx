@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonBag',
   component: ButtonBag,
   argTypes: {
-    handleClick: { action: 'click' },
+    onClick: { action: 'click' },
   },
 };
 

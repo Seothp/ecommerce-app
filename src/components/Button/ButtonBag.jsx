@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
   background-color: ${(props) => props.bgColor};
   ${({ isActive }) => (isActive ? 'box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)' : '')};
 `;
-function ButtonBag({ handleClick, isActive, ...attrs }) {
+function ButtonBag({ onClick, isActive, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -41,7 +41,7 @@ function ButtonBag({ handleClick, isActive, ...attrs }) {
   return (
     <StyledButton
       size="small"
-      handleClick={handleClick}
+      onClick={onClick}
       theme={theme}
       bgColor={bgColor}
       isActive={isActive}
@@ -60,7 +60,7 @@ function ButtonBag({ handleClick, isActive, ...attrs }) {
 }
 
 ButtonBag.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   isActive: bool,
 };
 
