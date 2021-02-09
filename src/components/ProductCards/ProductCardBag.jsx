@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -8,6 +8,8 @@ import HelperText from '../Typography/HelperText';
 import ButtonMore from '../Button/ButtonMore';
 import Counter from '../Counter/Counter';
 import Price from '../Price/Price';
+import Popup from '../Popup/Popup';
+
 import { ThemeContext } from '../../theme-context';
 
 const StyledProductCardBag = styled.div`
@@ -52,12 +54,28 @@ const StyledButton = styled(ButtonMore)`
   top: 0;
   right: 0;
 `;
+/**
+ * @param {object} props
+ * @param {Array<{title: String, onClick: function}>} props.popupList
+ */
 function ProductCardBag({
-  imgSrc, count, onCountIncrease, onCountDecrease, color, size, price, newPrice, item, onMoreClick,
+  imgSrc, count, onCountChange, color, size, price, newPrice, item, id, popupList,
 }) {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const handleCountIncrease = () => {
+    onCountChange({ id, count: count + 1 });
+  };
+  const handleCountDecrease = () => {
+    onCountChange({ id, count: count - 1 });
+  };
   const theme = useContext(ThemeContext);
   const textColor = theme.invert;
   const helperColor = theme.gray;
+  const list = popupList.map((item) => {
+    const newItem = { ...item };
+    newItem.onClick = () => item.onClick(id);
+    return newItem;
+  });
   return (
     <Card className="product-card-bag">
       <StyledProductCardBag>
@@ -88,17 +106,27 @@ function ProductCardBag({
           </ProductFeatures>
           <StyledCounter
             className="counter"
-            onCountDecrease={onCountDecrease}
-            onCountIncrease={onCountIncrease}
+            onCountIncrease={handleCountIncrease}
+            onCountDecrease={handleCountDecrease}
             count={count}
           />
           <StyledPrice
             price={price}
             newPrice={newPrice}
           />
-          <StyledButton className="more" type="button" onClick={onMoreClick} />
+          <StyledButton
+            className="more"
+            type="button"
+            onClick={() => setIsPopupOpen(true)}
+          />
         </StyledInfo>
       </StyledProductCardBag>
+      <Popup
+        list={list}
+        // list={popupList}
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
     </Card>
   );
 }
@@ -107,12 +135,18 @@ ProductCardBag.propTypes = {
   imgSrc: PropTypes.string.isRequired,
   item: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
-  onCountIncrease: PropTypes.func.isRequired,
-  onCountDecrease: PropTypes.func.isRequired,
-  onMoreClick: PropTypes.func.isRequired,
   color: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  popupList: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    onClick: PropTypes.func,
+  })).isRequired,
+  onCountChange: PropTypes.func.isRequired,
   newPrice: PropTypes.number,
 };
 
