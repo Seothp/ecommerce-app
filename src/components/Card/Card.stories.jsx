@@ -21,13 +21,13 @@ const Template = (args) => <Card {...args} />;
 export const DefaultEmptyLine = Template.bind({});
 DefaultEmptyLine.args = {
   type: 'line',
-  children: null,
+  children: '',
 };
 
 export const DefaultEmptyModule = Template.bind({});
 DefaultEmptyModule.args = {
   type: 'module',
-  children: null,
+  children: '',
 };
 
 export const DefaultFilledLine = Template.bind({});
