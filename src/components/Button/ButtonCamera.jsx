@@ -13,9 +13,9 @@ const StyledButton = styled(Button)`
   line-height: 0;
 `;
 
-function ButtonCamera({ onClick }) {
+function ButtonCamera({ handleClick }) {
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton handleClick={handleClick}>
       camera
       <IconCamera />
     </StyledButton>
@@ -23,7 +23,7 @@ function ButtonCamera({ onClick }) {
 }
 
 ButtonCamera.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default ButtonCamera;
