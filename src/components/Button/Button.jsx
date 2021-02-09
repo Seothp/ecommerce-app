@@ -16,7 +16,7 @@ const StyledButton = styled.button`
 `;
 
 function Button({
-  size, variant, children, handleClick, ...attrs
+  size, variant, children, onClick, ...attrs
 }) {
   const theme = useContext(ThemeContext);
   const { primary } = theme;
@@ -48,7 +48,7 @@ function Button({
       size={size}
       variant={variant}
       addStyles={additionalStyles}
-      onClick={handleClick}
+      onClick={onClick}
       {...attrs}
     >
       {children}
@@ -59,7 +59,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['big', 'small']),
   variant: PropTypes.oneOf(['primary', 'outline']),
   children: PropTypes.node,
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
