@@ -20,9 +20,9 @@ const ReviewText = styled.span`
   font-size: 11px;
   line-height: 8px;
 `;
-function ButtonReview({ handleClick }) {
+function ButtonReview({ onClick }) {
   return (
-    <StyledButton size="small" handleClick={handleClick}>
+    <StyledButton size="small" onClick={onClick}>
       <IconPencil />
       <ReviewText>Write a review</ReviewText>
     </StyledButton>
@@ -30,7 +30,7 @@ function ButtonReview({ handleClick }) {
 }
 
 ButtonReview.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonReview;

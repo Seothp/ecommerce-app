@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonReview',
   component: ButtonReview,
   argTypes: {
-    handleClick: { action: 'click' },
+    onClick: { action: 'click' },
   },
 };
 
