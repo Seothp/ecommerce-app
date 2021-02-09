@@ -9,11 +9,6 @@ export default {
   component: ProductCardBag,
   argTypes: {
     onCountChange: { action: 'count change' },
-    popupList: [
-      {
-        onClick: { action: 'popul item clicked' },
-      },
-    ],
   },
 };
 
@@ -23,7 +18,6 @@ export const Default = Template.bind({});
 Default.args = {
   imgSrc: 'https://via.placeholder.com/100',
   count: 5,
-  // onCountChange: () => {},
   color: 'black',
   size: 'L',
   price: 100,
