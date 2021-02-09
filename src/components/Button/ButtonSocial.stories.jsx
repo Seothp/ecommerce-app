@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonSocial',
   component: ButtonSocial,
   argTypes: {
-    handleClick: { action: 'click' },
+    onClick: { action: 'click' },
   },
 };
 
