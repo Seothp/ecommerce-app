@@ -5,6 +5,10 @@ import ProductCardFavorites from './ProductCardFavorites';
 export default {
   title: 'Components/ProductCards/ProductCardCFavorites',
   component: ProductCardFavorites,
+  argTypes: {
+    onAddToBag: { action: 'add to bag' },
+    onRemoveFromFavorites: { action: 'remove from favorites' },
+  },
 };
 
 const Template = (args) => <ProductCardFavorites {...args} />;
@@ -19,8 +23,6 @@ Default.args = {
   rating: 8.8,
   countOfVotes: 53,
   imgSrc: 'https://via.placeholder.com/100',
-  onAddToBag: () => {},
-  onRemoveFromFavorites: () => {},
 };
 
 export const Line = Template.bind({});

@@ -5,6 +5,9 @@ import PromocodeCard from './PromocodeCard';
 export default {
   title: 'Components/PromocodeCard',
   component: PromocodeCard,
+  argTypes: {
+    onApply: { action: 'apply promocode' },
+  },
 };
 
 const Template = (args) => <PromocodeCard {...args} />;
@@ -15,7 +18,6 @@ Default.args = {
   title: 'Summer code',
   code: 'SUMMER2021',
   daysRemaining: 6,
-  onApply: () => {},
 };
 export const WithImage = Template.bind({});
 WithImage.args = {

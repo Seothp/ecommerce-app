@@ -5,6 +5,9 @@ import ProductCardCatalog from './ProductCardCatalog';
 export default {
   title: 'Components/ProductCards/ProductCardCataglog',
   component: ProductCardCatalog,
+  argTypes: {
+    onAddToFavorites: { action: 'add to favorites' },
+  },
 };
 
 const Template = (args) => <ProductCardCatalog {...args} />;
@@ -17,7 +20,6 @@ Default.args = {
   brand: 'gucci',
   rating: 8.5,
   countOfVotes: 23,
-  onAddToFavorites: () => {},
 };
 export const Line = Template.bind({});
 Line.args = {

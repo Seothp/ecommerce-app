@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
+import { action } from '@storybook/addon-actions';
 
 import Popup from './Popup';
 
@@ -28,15 +30,15 @@ Default.args = {
   list: [
     {
       title: 'Do one...',
-      onClick: () => {},
+      onClick: action('do one'),
     },
     {
       title: 'Do two...',
-      onClick: () => {},
+      onClick: action('do two'),
     },
     {
       title: 'Do three...',
-      onClick: () => {},
+      onClick: action('do three'),
     },
   ],
 };
