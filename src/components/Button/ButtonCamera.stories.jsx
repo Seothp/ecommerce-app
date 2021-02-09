@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonCamera',
   component: ButtonCamera,
   argTypes: {
-    handleClick: { action: 'clicked' },
+    onClick: { action: 'clicked' },
   },
 };
 
