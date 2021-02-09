@@ -13,9 +13,9 @@ const StyledButton = styled(Button)`
   line-height: 0;
 `;
 
-function ButtonSearch({ handleClick }) {
+function ButtonSearch({ onClick }) {
   return (
-    <StyledButton handleClick={handleClick}>
+    <StyledButton onClick={onClick}>
       search
       <IconSearch />
     </StyledButton>
@@ -23,7 +23,7 @@ function ButtonSearch({ handleClick }) {
 }
 
 ButtonSearch.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonSearch;

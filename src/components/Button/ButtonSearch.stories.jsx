@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonSearch',
   component: ButtonSearch,
   argTypes: {
-    handleClick: { action: 'click' },
+    onClick: { action: 'click' },
   },
 };
 
