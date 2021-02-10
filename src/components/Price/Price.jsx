@@ -25,6 +25,12 @@ font-family: Roboto;
   color: ${(props) => props.color};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Number} props.price
+ * @param {Number} props.newPrice
+ */
 function Price({ price, newPrice, ...attrs }) {
   const theme = useContext(ThemeContext);
   const { invert, gray, sale } = theme;

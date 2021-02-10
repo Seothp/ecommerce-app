@@ -38,6 +38,20 @@ const EditButton = styled.button`
 const Name = styled.div`
   font-weight: 500;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {String} props.fullName
+ * @param {String} props.country
+ * @param {String} props.street
+ * @param {String} props.city
+ * @param {String} props.zipCode
+ * @param {Function} props.onEditClick
+ * @param {Function} props.onChange
+ * @param {Boolean} props.isActive
+ * @param {String | Number} props.id
+ */
 function AdressCard({
   fullName, country, street, city, zipCode, onEditClick, onChange, isActive, id,
 }) {

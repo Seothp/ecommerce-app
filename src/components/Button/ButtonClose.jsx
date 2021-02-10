@@ -33,6 +33,12 @@ const VerticalLine = styled.div`
 const Cross = styled.div`
   transform: rotate(45deg);
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ */
 function ButtonClose({ onClick, ...attrs }) {
   const theme = useContext(ThemeContext);
   const color = theme.gray;

@@ -21,6 +21,12 @@ const Dot = styled.div`
   height: 4px;
   border-radius: 50%;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ */
 function ButtonMore({ onClick, ...attrs }) {
   const theme = useContext(ThemeContext);
   const color = theme.gray;

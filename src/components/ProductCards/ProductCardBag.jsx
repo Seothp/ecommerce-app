@@ -57,6 +57,15 @@ const StyledButton = styled(ButtonMore)`
 /**
  * @param {object} props
  * @param {Array<{title: String, onClick: function}>} props.popupList
+ * @param {String} props.imgSrc
+ * @param {Number} props.count
+ * @param {Function} props.onCountChange
+ * @param {String} props.color
+ * @param {String} props.size
+ * @param {Number} props.price
+ * @param {Number} props.newPrice
+ * @param {String} props.item
+ * @param {String | Number} props.id
  */
 function ProductCardBag({
   imgSrc, count, onCountChange, color, size, price, newPrice, item, id, popupList,

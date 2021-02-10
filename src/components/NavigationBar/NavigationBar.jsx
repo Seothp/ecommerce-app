@@ -33,6 +33,14 @@ const StyledBottomNavBar = styled.div`
   padding-left: 14px;
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Boolean} props.isHeadline
+ * @param {String} props.title
+ * @param {'small' | 'big'} props.size
+ * @param {Function} props.onClick
+ */
 function NavigationBar({
   isHeadline, title, size, onClick, ...attrs
 }) {
@@ -48,20 +56,20 @@ function NavigationBar({
           <IconChevron fill={fill} />
         </Chevron>
         {isSmallHeadline
-        && (
-        <Header3 color={color}>
-          {title}
-        </Header3>
-        )}
+          && (
+            <Header3 color={color}>
+              {title}
+            </Header3>
+          )}
       </StyledTopNavBar>
       {isBigHeadline
-      && (
-        <StyledBottomNavBar>
-          <Header1 color={color}>
-            {title}
-          </Header1>
-        </StyledBottomNavBar>
-      )}
+        && (
+          <StyledBottomNavBar>
+            <Header1 color={color}>
+              {title}
+            </Header1>
+          </StyledBottomNavBar>
+        )}
     </StyledNavigationBar>
   );
 }

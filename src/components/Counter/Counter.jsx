@@ -28,6 +28,14 @@ const Count = styled.div`
   line-height: 20px;
   color: ${(props) => props.color};
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Number} props.count
+ * @param {Function} props.onCountDecrease
+ * @param {Function} props.onCountIncrease
+ */
 function Counter({
   count, onCountIncrease, onCountDecrease, ...attrs
 }) {

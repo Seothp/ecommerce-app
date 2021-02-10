@@ -29,6 +29,18 @@ const FilterSortWrapper = styled.div`
   align-items: center;
   margin-right: auto;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {'grid' | 'list'} props.grid
+ * @param {String} props.sortBy
+ * @param {Function} props.onGridChange
+ * @param {Function} props.onDirectionChange
+ * @param {Function} props.onOpenFilters
+ * @param {Function} props.onSortByChange
+ * @param {Number} props.width
+ */
 function FilterMenu({
   grid, sortBy, onGridChange, onDirectionChange, onOpenFilters, width, onSortByChange, ...attrs
 }) {

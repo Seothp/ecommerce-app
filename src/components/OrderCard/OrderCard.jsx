@@ -46,6 +46,18 @@ const TrackId = styled.div`
 const StyledButton = styled(Button)`
   width: 98px;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Number} props.id
+ * @param {String | Number} props.trackId
+ * @param {String} props.date
+ * @param {Number} props.quantity
+ * @param {Number} props.amount
+ * @param {Function} props.onOpenDetails
+ * @param {'delivered' | 'cancelled'} props.deliverStatus
+ */
 function OrderCard({
   id, trackId, date, quantity, amount, onOpenDetails, deliverStatus,
 }) {

@@ -16,6 +16,12 @@ const StyledButton = styled.button`
   }
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {string} props.type
+ * @param {Function} props.onClick
+ */
 function ButtonSocial({ onClick, type, ...attrs }) {
   return (
     <StyledButton onClick={onClick} {...attrs}>

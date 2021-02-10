@@ -16,6 +16,11 @@ const StyledButton = styled.button`
   background-color: ${(props) => (props.pressed ? props.theme.main : props.theme.invert)};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ */
 function ButtonAdd({ onClick }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);

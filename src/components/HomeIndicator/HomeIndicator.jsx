@@ -22,6 +22,11 @@ const Line = styled.div`
   background: ${(props) => props.bgColor};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {'light' | 'dark'} props.type
+ */
 function HomeIndicator({ type, ...attrs }) {
   const theme = useContext(ThemeContext);
   const isLight = type === 'light';

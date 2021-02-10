@@ -15,6 +15,14 @@ const StyledButton = styled.button`
   ${(props) => props.addStyles};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {String} props.size
+ * @param {String} props.variant
+ * @param {Node} props.children
+ * @param {Function} props.onClick
+ */
 function Button({
   size, variant, children, onClick, ...attrs
 }) {

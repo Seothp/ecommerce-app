@@ -15,6 +15,13 @@ const StyledButton = styled(Button)`
   background-color: ${(props) => props.bgColor};
   ${({ isActive }) => (isActive ? 'box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)' : '')};
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ * @param {Boolean} props.isActive
+ */
 function ButtonBag({ onClick, isActive, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);

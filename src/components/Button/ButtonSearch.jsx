@@ -13,6 +13,11 @@ const StyledButton = styled(Button)`
   line-height: 0;
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ */
 function ButtonSearch({ onClick }) {
   return (
     <StyledButton onClick={onClick}>

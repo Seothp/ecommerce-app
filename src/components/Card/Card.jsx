@@ -11,6 +11,14 @@ const StyledCard = styled.div`
   border-radius: ${(props) => props.borderRadius};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {String} props.type
+ * @param {Number} props.width
+ * @param {Number} props.height
+ * @param {Node} props.children
+ */
 function Card({
   type, width, height, children, ...attrs
 }) {

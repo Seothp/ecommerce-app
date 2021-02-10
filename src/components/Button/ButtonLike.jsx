@@ -16,6 +16,12 @@ const StyledButton = styled(Button)`
   background-color: ${(props) => (props.pressed ? props.theme.primary : props.theme.main)};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ * @param {Boolean} props.active
+ */
 function ButtonLike({ onClick, active, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);

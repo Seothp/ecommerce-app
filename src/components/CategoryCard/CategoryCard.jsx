@@ -32,6 +32,12 @@ const Category = styled(Header3)`
   width: 172px;
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {String} props.category
+ * @param {String} props.imgSrc
+ */
 function CategoryCard({ category, imgSrc, ...attrs }) {
   const theme = useContext(ThemeContext);
   const textColor = theme.invert;

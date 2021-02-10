@@ -34,6 +34,14 @@ const Circle = styled.div`
   background-color: ${(props) => (props.isActive ? props.theme.success : props.circleColor)};
   opacity: ${(props) => (props.isActive ? 1 : props.opacity)};
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Boolean} props.isActive
+ * @param {String | Number} props.id
+ * @param {Function} props.onChange
+ */
 function Switch({
   isActive, id, onChange, ...attrs
 }) {

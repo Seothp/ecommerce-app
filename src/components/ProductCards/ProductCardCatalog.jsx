@@ -4,6 +4,20 @@ import PropTypes from 'prop-types';
 import ProductCardCatalogLine from './ProductCardCatalogLine';
 import ProductCardCatalogModule from './ProductCardCatalogModule';
 
+/**
+ *
+ * @param {object} props
+ * @param {'line' | 'module'} props.type
+ * @param {Boolean} props.main
+ * @param {String} props.imgSrc
+ * @param {Number} props.price
+ * @param {Number} props.newPrice
+ * @param {Number} props.rating
+ * @param {Number} props.countOfVotes
+ * @param {String} props.item
+ * @param {String} props.brand
+ * @param {Function} props.onAddToFavorites
+ */
 function ProductCardCatalog({
   type, main, imgSrc, price, newPrice, item, brand, rating, countOfVotes, onAddToFavorites,
 }) {

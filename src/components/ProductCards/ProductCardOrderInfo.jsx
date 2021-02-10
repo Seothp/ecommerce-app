@@ -28,7 +28,19 @@ const ImageWrapper = styled.div`
   left: 0;
   top: 0;
 `;
-const StyledImage = styled.img``;
+
+/**
+ *
+ * @param {object} props
+ * @param {String} props.itemName
+ * @param {String} props.brandName
+ * @param {String} props.color
+ * @param {String} props.size
+ * @param {Number} props.units
+ * @param {Number} props.price
+ * @param {Number} props.newPrice
+ * @param {String} props.imgSrc
+ */
 function ProductCardOrderInfo({
   itemName, brandName, color, size, units, price, newPrice, imgSrc,
 }) {
@@ -39,7 +51,7 @@ function ProductCardOrderInfo({
     <Card>
       <StyledProductCardOrderInfo>
         <ImageWrapper>
-          <StyledImage src={imgSrc} alt="order info card" />
+          <img src={imgSrc} alt="order info card" />
         </ImageWrapper>
         <Subheader color={textColor}>
           {itemName}

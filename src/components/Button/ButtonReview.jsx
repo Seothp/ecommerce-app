@@ -20,6 +20,12 @@ const ReviewText = styled.span`
   font-size: 11px;
   line-height: 8px;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Function} props.onClick
+ */
 function ButtonReview({ onClick }) {
   return (
     <StyledButton size="small" onClick={onClick}>

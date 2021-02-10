@@ -18,6 +18,15 @@ const TagWrapper = styled.button`
   border-radius: ${(props) => (props.isOrdinary ? '8px' : '30px')};
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Boolean} props.isActive
+ * @param {'ordinary' | 'small'} props.size
+ * @param {Function} props.onClick
+ * @param {Number} props.width
+ * @param {String} props.text
+ */
 function Tag({
   isActive, size, onClick, width, text, ...attrs
 }) {

@@ -64,6 +64,16 @@ const Left = styled.div`
   text-align: center;
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {String} props.imgSrc
+ * @param {Number} props.discount
+ * @param {String} props.title
+ * @param {String | Number} props.code
+ * @param {Number} props.daysRemaining
+ * @param {Function} props.onApply
+ */
 function PromocodeCard({
   imgSrc, discount, title, code, daysRemaining, onApply,
 }) {

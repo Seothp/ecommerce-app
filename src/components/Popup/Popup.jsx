@@ -44,6 +44,14 @@ const StyledButton = styled.button`
   color: ${(props) => props.textColor};
 `;
 ReactModal.setAppElement('div');
+
+/**
+ *
+ * @param {object} props
+ * @param {Array<{title: String, onClick: Function}>} props.list
+ * @param {Boolean} props.isOpen
+ * @param {Function} props.onClose
+ */
 function Popup({
   list, isOpen, onClose,
 }) {
@@ -88,12 +96,6 @@ Popup.propTypes = {
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   })).isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  // callbackArg: PropTypes.any,
-};
-
-Popup.defaultProps = {
-  // callbackArg: null,
 };
 
 export default Popup;

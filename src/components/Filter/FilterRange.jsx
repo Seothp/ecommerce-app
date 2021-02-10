@@ -12,9 +12,6 @@ const StyledSlider = styled(Slider)`
   position: relative;
   width: 343px;
   height: 40px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 `;
 const StyledRail = styled.div`
   position: absolute;
@@ -35,6 +32,14 @@ const EndValue = styled(Descriptive)`
   right: 0;
   color: ${(props) => props.color};
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Number} props.start
+ * @param {Number} props.end
+ * @param {Function} props.onUpdate
+ */
 function FilterRange({ start, end, onUpdate }) {
   const theme = useContext(ThemeContext);
   const [values, setValues] = useState({ start, end });

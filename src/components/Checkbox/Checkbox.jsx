@@ -1,4 +1,3 @@
-// /* eslint-disable */
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -36,6 +35,15 @@ const StyledLabel = styled.label`
   display: flex;
   width: fit-content;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {String | Number} props.id
+ * @param {String} props.text
+ * @param {Boolean} props.checked
+ * @param {Function} props.onChange
+ */
 function Checkbox({
   id, text, checked, onChange, ...attrs
 }) {

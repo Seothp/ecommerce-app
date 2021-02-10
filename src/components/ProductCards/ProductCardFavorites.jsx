@@ -4,6 +4,23 @@ import PropTypes from 'prop-types';
 import ProductCardFavoritesLine from './ProductCardFavoritesLine';
 import ProductCardFavoritesModule from './ProductCardFavoritesModule';
 
+/**
+ *
+ * @param {object} props
+ * @param {'line' | 'module'} props.type
+ * @param {Boolean} props.soldout
+ * @param {String} props.brandName
+ * @param {String} props.itemName
+ * @param {String} props.color
+ * @param {String} props.size
+ * @param {Number} props.price
+ * @param {Number} props.newPrice
+ * @param {Number} props.rating
+ * @param {Number} props.countOfVotes
+ * @param {String} props.imgSrc
+ * @param {Function} props.onAddToBag
+ * @param {Function} props.onRemoveFromFavorites
+ */
 function ProductCardFavorites({
   type, soldout, brandName, itemName, color, size, price, newPrice, rating, countOfVotes, imgSrc,
   onAddToBag, onRemoveFromFavorites,

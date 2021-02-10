@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -26,6 +25,15 @@ const StarsWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
+
+/**
+ *
+ * @param {object} props
+ * @param {Number} props.rating
+ * @param {Number} props.starWidth
+ * @param {Number} props.starHeight
+ * @param {Number} props.countOfVotes
+ */
 function Rating({
   rating, starWidth, starHeight, countOfVotes, ...attrs
 }) {
@@ -44,7 +52,7 @@ function Rating({
               isActive={star.isActive}
               width={starWidth}
               height={starHeight}
-              style={{display: 'block'}}
+              style={{ display: 'block' }}
             />
           ))
         }
@@ -61,5 +69,13 @@ function Rating({
 Rating.propTypes = {
   rating: PropTypes.number.isRequired,
   countOfVotes: PropTypes.number.isRequired,
+  starWidth: PropTypes.number,
+  starHeight: PropTypes.number,
 };
+
+Rating.defaultProps = {
+  starWidth: 13,
+  starHeight: 12,
+};
+
 export default Rating;

@@ -37,6 +37,13 @@ const Line = styled.div`
 `;
 
 ReactModal.setAppElement('div');
+/**
+ *
+ * @param {object} props
+ * @param {Boolean} props.isOpen
+ * @param {Function} props.onClose
+ * @param {Node} props.children
+ */
 function Modal({ isOpen, onClose, children }) {
   const theme = useContext(ThemeContext);
   const lineColor = theme.gray;

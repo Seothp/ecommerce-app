@@ -46,6 +46,15 @@ const DropdownItem = styled.div`
   padding-right: 8px;
 `;
 
+/**
+ *
+ * @param {object} props
+ * @param {Array<String | Number>} props.list
+ * @param {String | Number} props.initialValue
+ * @param {Function} props.onChange
+ * @param {Boolean} props.required
+ * @param {Number} props.width
+ */
 function Dropdown({
   initialValue, list, onChange, required, width,
 }) {
