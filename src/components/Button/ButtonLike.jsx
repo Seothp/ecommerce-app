@@ -20,9 +20,9 @@ const StyledButton = styled(Button)`
  *
  * @param {object} props
  * @param {Function} props.onClick
- * @param {Boolean} props.active
+ * @param {Boolean} props.isActive
  */
-function ButtonLike({ onClick, active, ...attrs }) {
+function ButtonLike({ onClick, isActive, ...attrs }) {
   const [pressed, setPressed] = useState(false);
   const theme = useContext(ThemeContext);
   const handlePress = () => {
@@ -36,7 +36,7 @@ function ButtonLike({ onClick, active, ...attrs }) {
   let fill;
   if (pressed) {
     fill = theme.main;
-  } else if (active) {
+  } else if (isActive) {
     fill = theme.primary;
   } else {
     fill = theme.gray;
@@ -50,18 +50,18 @@ function ButtonLike({ onClick, active, ...attrs }) {
       {...attrs}
     >
       like
-      <IconHeart outline={!pressed && !active} fill={fill} width={13} height={12} />
+      <IconHeart outline={!pressed && !isActive} fill={fill} width={13} height={12} />
     </StyledButton>
   );
 }
 
 ButtonLike.propTypes = {
   onClick: PropTypes.func.isRequired,
-  active: PropTypes.bool,
+  isActive: PropTypes.bool,
 };
 
 ButtonLike.defaultProps = {
-  active: false,
+  isActive: false,
 };
 
 export default ButtonLike;
