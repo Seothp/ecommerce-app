@@ -1,5 +1,15 @@
 # components library
-
+## install project:
+```
+git clone https://github.com/Seothp/ecommerce-app.git
+```
+in cloned directory:
+```
+npm ci
+```
+```
+npm run storybook
+```
 ## Start storybook: 
 
 ### `npm run storybook`
